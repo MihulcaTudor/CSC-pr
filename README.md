@@ -1,8 +1,7 @@
 # CSC-pr
-#
 
 Proiect csc 
-roluri:
+#roluri:
 Team Leader - Aida
 Transmisie - Costin
 Receptie - Tudor
