@@ -1,5 +1,5 @@
 # CSC-pr
-#\n
+#
 
 Proiect csc 
 roluri:
