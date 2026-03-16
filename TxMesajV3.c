@@ -73,7 +73,7 @@ void TxMesaj(unsigned char i)
 	{		
 		UART1_TxRxEN(0, 0);					// dezactivare Tx si Rx UART1
 		UART1_RS485_XCVR(0, 0);					// dezactivare Tx si Rx RS485
-		Error("Detectie coliziune!");				// afiseaza Eroare coliziune
+		Error("\nDetectie coliziune!");				// afiseaza Eroare coliziune
 		Delay(WAIT);						// asteapta WAIT msec
 		return;				// termina transmisia (revine)
 	}														
