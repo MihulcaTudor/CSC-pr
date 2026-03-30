@@ -37,15 +37,13 @@ if(0 == (tasta = TERM_Input())){
 				
 							case '1': 																								// s-a dat comanda de transmisie mesaj								
 								LCD_PutStr(1, 0, "Tx Msg:> Nod = ");																// afiseaza Tx Msg:> Nod = 
-								UART0_Putstr("\nTx Msg:> Nod = ");
+								UART0_Putstr("Tx Msg:> Nod = ");
 								AFISARE = 0;																						// blocheaza afisarea (AFISARE = 0)
 								STARE_IO = 1;																						// trece in starea 1
 								cmd = 1;																		 						// comanda este '1'
 									break;
 							
 							case '2': 																								// s-a dat comanda de afisare Stare Nod:
-								LCD_PutStr(1, 0, "Tx Msg:> Adr = ");																
-								UART0_Putstr("\nTx Msg:> Adr= ");
 								AFISARE = 0;																						// blocheaza afisarea (AFISARE = 0)
 								STARE_IO = 1;																						// trece in starea 1
 								cmd = 2;																								// comanda este '2'
@@ -59,7 +57,7 @@ if(0 == (tasta = TERM_Input())){
 							dest = tasta-'0';																									// extrage dest din tasta
 							if(retea[dest].full){ 																					// Daca este deja un mesaj in buffer ...
 								LCD_PutStr(1, 0, "Buffer plin");																				// afiseaza Buffer plin
-								UART0_Putstr("\nBuffer plin");
+								UART0_Putstr("Buffer plin");
 								STARE_IO = 0;																											// trece in starea 0, s-a terminat tratarea comenzii '1'
 								Afisare_meniu();																									// afisare meniu
 							}
@@ -76,7 +74,7 @@ if(0 == (tasta = TERM_Input())){
 								retea[dest].bufbin.src = ADR_NOD;												// pune in bufferul dest adresa nodului sursa ADR_NOD
 								retea[dest].bufbin.dest = dest; 												// pune in bufferul dest adresa nodului destinatie (dest)
 								LCD_PutStr(LCD_line, LCD_col, "MSG:> ");							  // cere introducerea mesajului
-								UART0_Putstr("\nMSG:> ");
+								UART0_Putstr("MSG:> ");
 								lng=0;																								// initializeaza lng = 0 
 								STARE_IO = 2;																						// trece in starea 2, sa astepte caracterele mesajului
 								LCD_Clear();
@@ -86,11 +84,11 @@ if(0 == (tasta = TERM_Input())){
 							dest = tasta-'0';																	// extrage dest din tasta
 							if(retea[dest].full){									// Daca este deja un mesaj in buffer ...
 								LCD_PutStr(1, 0, "Buffer plin");														// Afiseaza Buffer plin
-								UART0_Putstr("\nBuffer plin");
+								UART0_Putstr("Buffer plin");
 							}
 							else{																									// altfel
 								LCD_PutStr(1, 0, "Buffer gol");									// Afiseaza Buffer gol
-								UART0_Putstr("\nBuffer gol");
+								UART0_Putstr("Buffer gol");
 							}
 							STARE_IO = 0;																// trece in starea 0, s-a terminat tratarea comenzii
 							Afisare_meniu();															// afisare meniu
